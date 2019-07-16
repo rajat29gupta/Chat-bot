@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="dialog">
+
+    <mat-toolbar color="primary" class="toolbar mat-elevation-z3">
+      <img src="assets/logo.png" width="50px"> 
+    </mat-toolbar>
+
+    <div class="messages">
+
+      <ng-container *ngFor="let message of messages | async">
+
+        <div class="message-row" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                              'to':   message.sentBy === 'user' }">
+          <div class="message">
+            <span [innerHtml]="message.content | mdToHtml"></span>
+          </div>
+        </div>
+
+      </ng-container>
+
+    </div>
+
+    <div class="send-message" (click)="messageInput.click()">
+      <mat-form-field floatPlaceholder="never">
+        <input matInput #messageInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" 
+          placeholder="Ask me about Angular..." autofocus autocomplete="off">
+      </mat-form-field>
+    </div>
+
+  </div>
+</div>
