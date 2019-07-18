@@ -1,14 +1,19 @@
 
-[![Slack](https://firebasestorage.googleapis.com/v0/b/firestarter-96e46.appspot.com/o/assets%2Fslack-badge.svg?alt=media&token=3e68acef-3e00-4925-9710-e11cee5923e4)](https://join.slack.com/angularfirebase/shared_invite/MjA2NTgxMTI0MTk2LTE0OTg4NTQ4MDAtMjhhZDIzMjc0Mg)
+# Steps to deploy the project
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+`npm install`
 
-# AngularChatbot
+`ng serve`
 
-Status: Pre-alpha
+Browser: `http://localhost:4200`
 
-A Dialogflow chatbot with profound knowledge of the Angular Framework. 
 
-## Contribute?
+## Development server
 
-Join the slack team and check into the #chatbot-dev channel if you want to help make it better.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+
