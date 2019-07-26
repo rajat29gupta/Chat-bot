@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-   openForm() {
-    document.getElementById("myForm").style.display = "block";
-  }
-  
-   closeForm() {
-    document.getElementById("myForm").style.display = "none";
-  }
 }

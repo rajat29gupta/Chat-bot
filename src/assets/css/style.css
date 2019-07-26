@@ -1049,7 +1049,7 @@ p {
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
   padding: 7em 0;
-  z-index: 1;
+  /* z-index: 1; */
   font-size: 14px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.5);
@@ -1095,7 +1095,7 @@ p {
 }
 
 #fh5co-container, .fh5co-nav-toggle, #fh5co-footer {
-  z-index: 2;
+  /* z-index: 2; */
   position: relative;
 }
 

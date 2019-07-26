@@ -20,11 +20,26 @@ export class ChatDialogComponent implements OnInit {
     // appends to array after each new message is added to feedSource
     this.messages = this.chat.conversation.asObservable()
         .scan((acc, val) => acc.concat(val) );
+       
   }
 
   sendMessage() {
+    // console.log("val "+this.formValue);
     this.chat.converse(this.formValue);
     this.formValue = '';
+  }
+  btnOutput(event:string){
+    // console.log("event "+event);
+    this.chat.converse(event);
+    this.formValue = '';
+  }
+
+  openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+   closeForm() {
+    document.getElementById("myForm").style.display = "none";
   }
 
 }
