@@ -25,73 +25,9 @@
 
 			</div>
 			
-        </div>
-        <button class="open-button" (click)="openForm()">Talk to Expert</button>
+		</div>
+		
 
-<div class="chat-popup" id="myForm" style="font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; padding:10px;background-color:#fff;width: 300px;height: 520.8px;"> 
-  <!-- <form class="form-container">
-       <iframe height="430" width="285" src="https://console.dialogflow.com/api-client/demo/embedded/83e62aa3-6fa7-4f7d-adab-5b7e24f4f34d"></iframe>
-    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
-  </form> -->
-
-  <div class="wrapper">
-      <div class="dialog">
-        <mat-toolbar color="primary" class="toolbar mat-elevation-z3">
-          <img src="assets/logo.png" width="85px" />
-        </mat-toolbar>
-    
-        <div class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-          <ng-container *ngFor="let message of messages | async">
-            <!-- {{message|json}} -->
-            <div class="message-row" [ngClass]="{
-                from: message.sentBy === 'bot',
-                to: message.sentBy === 'user'
-              }">
-              <div>
-                <span class="message"  style="font-size:14px!important;" *ngIf="
-                    message.content[0].subtitle === undefined &&
-                    message.content[0].speech === undefined
-                  " [innerHtml]="message.content "></span>
-    
-                  <!-- quick-reply blog -->
-                <div *ngIf="message.content[0].speech">
-                  <span class="message" [innerHtml]="message.content[0].speech"></span><br />
-                  <div>
-                    <button class="btn-cs" (click)="btnOutput(message.content[1].replies[0])" [innerHtml]="message.content[1].replies[0]"></button>
-                    <button class="btn-cs" (click)="btnOutput(message.content[1].replies[1])" [innerHtml]="message.content[1].replies[1]"></button>
-                  </div>
-                </div>
-    
-                <!-- card-display blog -->
-                <div *ngIf="message.content[0].subtitle" class="card" style="width: 18rem;">
-                  <img class="card-img-top" [src]="message.content[0].imageUrl" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title" [innerHtml]="message.content[0].title"></h5>
-                    <p class="card-text" [innerHtml]="message.content[0].subtitle"></p>
-                    <a href="{{ message.content[0].buttons[0].postback }}" class="btn btn-primary"
-                      [innerHtml]="message.content[0].buttons[0].text"></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-    
-        <div class="send-message" (click)="messageInput.click()">
-          <mat-form-field floatPlaceholder="never">
-            <input matInput style="width: 100%;
-            border: 0;
-            font-size: 15px;
-            font-weight: 300;
-            margin: 0;
-            height: 55px;" #messageInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" autofocus
-              autocomplete="off" />
-          </mat-form-field>
-        </div>
-      </div>
-    </div>
-    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
-</div>
 		
 		<div class="js-sticky">
 			<div class="fh5co-main-nav">
@@ -658,4 +594,69 @@
 
 
 	
-	
+	<button class="open-button" (click)="openForm()">Talk to Expert</button>
+
+<div class="chat-popup" id="myForm" style="font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; padding:10px;background-color:#fff;width: 300px;height: 520.8px;"> 
+  <!-- <form class="form-container">
+       <iframe height="430" width="285" src="https://console.dialogflow.com/api-client/demo/embedded/83e62aa3-6fa7-4f7d-adab-5b7e24f4f34d"></iframe>
+    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+  </form> -->
+
+  <div class="wrapper">
+      <div class="dialog">
+        <mat-toolbar color="primary" class="toolbar mat-elevation-z3">
+          <img src="assets/logo.png" width="85px" />
+        </mat-toolbar>
+    
+        <div class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+          <ng-container *ngFor="let message of messages | async">
+            <!-- {{message|json}} -->
+            <div class="message-row" [ngClass]="{
+                from: message.sentBy === 'bot',
+                to: message.sentBy === 'user'
+              }">
+              <div>
+                <span class="message"  style="font-size:14px!important;" *ngIf="
+                    message.content[0].subtitle === undefined &&
+                    message.content[0].speech === undefined
+                  " [innerHtml]="message.content "></span>
+    
+                  <!-- quick-reply blog -->
+                <div *ngIf="message.content[0].speech">
+                  <span class="message" [innerHtml]="message.content[0].speech"></span><br />
+                  <div>
+                    <button class="btn-cs" (click)="btnOutput(message.content[1].replies[0])" [innerHtml]="message.content[1].replies[0]"></button>
+                    <button class="btn-cs" (click)="btnOutput(message.content[1].replies[1])" [innerHtml]="message.content[1].replies[1]"></button>
+                  </div>
+                </div>
+    
+                <!-- card-display blog -->
+                <div *ngIf="message.content[0].subtitle" class="card" style="width: 18rem;">
+                  <img class="card-img-top" [src]="message.content[0].imageUrl" alt="Card image cap" />
+                  <div class="card-body">
+                    <h5 class="card-title" [innerHtml]="message.content[0].title"></h5>
+                    <p class="card-text" [innerHtml]="message.content[0].subtitle"></p>
+                    <a href="{{ message.content[0].buttons[0].postback }}" class="btn btn-primary"
+                      [innerHtml]="message.content[0].buttons[0].text"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+    
+        <div class="send-message" (click)="messageInput.click()">
+          <mat-form-field floatPlaceholder="never">
+            <input matInput style="width: 100%;
+            border: 0;
+            font-size: 15px;
+            font-weight: 300;
+            margin: 0;
+            height: 55px;" #messageInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" autofocus
+              autocomplete="off" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+</div>
